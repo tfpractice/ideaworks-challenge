@@ -2776,6 +2776,12 @@ eslint-plugin-flowtype@2.35.0:
   dependencies:
     lodash "^4.15.0"
 
+eslint-plugin-flowtype@^2.35.1:
+  version "2.35.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-2.35.1.tgz#9ad98181b467a3645fbd2a8d430393cc17a4ea63"
+  dependencies:
+    lodash "^4.15.0"
+
 eslint-plugin-import-order-autofix@^0.8.3:
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/eslint-plugin-import-order-autofix/-/eslint-plugin-import-order-autofix-0.8.3.tgz#f0448b041d2fc641b53c61ed121fa6ba76359e7d"
