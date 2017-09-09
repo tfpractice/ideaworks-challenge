@@ -3,6 +3,7 @@ import Grid from 'material-ui/Grid';
 import SwipeableViews from 'react-swipeable-views';
 import withWidth from 'material-ui/utils/withWidth';
 import { compose, withHandlers, withState } from 'recompose';
+import Tabs, { Tab } from 'material-ui/Tabs';
 
 const cStyle = { maxHeight: '15rem' };
 const sStyle = {
@@ -18,17 +19,11 @@ const wIndex = compose(
   })
 );
 
-const SwipeTabs = ({ children, changeSet, index, iHue = '#f0f' }) => (
+const Header = ({ children, changeSet, index, iHue = '#f0f' }) => (
   <Grid container justify="center" spacing={0}>
     <Grid item xs={11}>
-      <Tabs
-        centered
-        index={index}
-        textColor="#fff"
-        indicatorColor={iHue}
-        onChange={changeSet}
-      >
-        {children.map((c, i) => <Tab key={i} label={c.props.tabLabel} />)}
+      <Tabs centered value={index} indicatorColor={iHue} onChange={changeSet}>
+        {children.map((c, i) => <Tab key={i} label={'.'} />)}
       </Tabs>
     </Grid>
     <Grid item xs={12}>
@@ -45,3 +40,5 @@ const SwipeTabs = ({ children, changeSet, index, iHue = '#f0f' }) => (
     </Grid>
   </Grid>
 );
+
+export default wIndex(Header);

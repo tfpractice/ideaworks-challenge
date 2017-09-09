@@ -5,4 +5,6 @@ const runway = {
   author: 'LOREM IPSUM',
 };
 
-export const links = Array(6).fill(runway);
+export const links = Array(6)
+  .fill(runway)
+  .map((e, id) => ({ id, ...e }));
