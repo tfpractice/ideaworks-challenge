@@ -6,5 +6,9 @@ const primary = grey;
 const accent = black;
 const type = 'dark';
 const palette = { primary, accent, type };
+const caslon = 'Caslon';
+const Springville = 'Springville';
+const fontFamily = `${caslon}, ${Springville}`;
+const typography = { fontFamily };
 
-export const theme = createMuiTheme({ palette });
+export const theme = createMuiTheme({ palette, typography });

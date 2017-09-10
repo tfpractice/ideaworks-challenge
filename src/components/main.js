@@ -7,12 +7,17 @@ import { compose, withHandlers, withState } from 'recompose';
 import EventCard from './event';
 import Header from './header';
 import Jumbo from './jumbo';
+import Nav from './nav';
 import { links } from './links';
 import { slides } from './slides';
 
+const mStyle = { marginTop: '50px' };
 const Main = () => (
   <Grid container justify="center" spacing={24}>
     <Grid item xs={12}>
+      <Nav />
+    </Grid>
+    <Grid item xs={12} style={mStyle}>
       <Header>{slides.map((s, i) => <Jumbo event={s} key={i} />)}</Header>
     </Grid>
     <Grid item xs={11}>

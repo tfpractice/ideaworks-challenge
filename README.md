@@ -1,4 +1,6 @@
+[final]: public/images/final.png
 
+![final][final]
 Below, you will find a link to the files necessary to complete this test. Included are a PSD design file, fonts needed for @font-face implementation, and a logo file in .ai and .eps formats. Please develop this page using React, Javascript, and SASS/SCSS or LESS, refraining from use of jQuery if possible. Your sample will be expected to function properly on IE 11, Edge, and the last 3 versions of Chrome, Firefox, and Safari, as well as on iOS Safari and Chrome (iPhone and iPad). No links are expected to be functional, but please include hover states. Please ensure that these pages are fully responsive from desktop down to 320px-width mobile. Responsive design treatment will be left up to your discretion save where noted below.
  
 The header should be fixed at the top of the screen as the user scrolls. On mobile, the height of the header should be 50px. Please resize and align items as necessary, keeping the logo to the left, and other items to the right.

@@ -2,7 +2,7 @@ import React from 'react';
 import IconButton from 'material-ui/IconButton';
 import Grid from 'material-ui/Grid';
 import Divider from 'material-ui/Divider';
-import Card, { CardMedia } from 'material-ui/Card';
+import Card, { CardContent, CardHeader, CardMedia } from 'material-ui/Card';
 import Text from 'material-ui/Typography';
 import { GridListTile, GridListTileBar } from 'material-ui/GridList';
 
@@ -12,26 +12,29 @@ import { Link } from 'react-router-dom';
 
 const styles = theme => ({
   item: { listStyle: 'none' },
+  bar: { bottom: '50%' },
   card: {
     height: '100%',
     maxHeight: '100%',
-    backgroundColor: 'rgba(66,66,66,0.8)',
+    maxWidth: '1440px',
+    backgroundColor: 'transparent',
   },
   media: {
     backgroundColor: '#fff',
-    height: '20rem',
+    height: '25rem',
+    maxWidth: '1440px',
+
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    '&:hover': { backgroundSize: 'contain' },
   },
 });
 const Styled = withStyles(styles);
 
 const Jumbo = ({ classes, event }) => (
-  <Card>
-    <Grid container direction="column">
-      <Grid item>
+  <Grid container justify="center" align="center">
+    <Grid item xs>
+      <Card className={classes.card}>
         <GridListTile className={classes.item}>
           <Link to={`/`}>
             <CardMedia
@@ -41,11 +44,15 @@ const Jumbo = ({ classes, event }) => (
             />
           </Link>
 
-          <GridListTileBar title={<Text>{event.title}</Text>} />
+          <GridListTileBar
+            className={classes.bar}
+            subtitle={<CardHeader title={event.text} subheader={event.date} />}
+            title={<CardHeader title={event.title} />}
+          />
         </GridListTile>
-      </Grid>
+      </Card>
     </Grid>
-  </Card>
+  </Grid>
 );
 
 export default Styled(Jumbo);

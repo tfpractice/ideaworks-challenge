@@ -3,3 +3,12 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+@font-face {
+  font-family: 'Caslon';
+  src: url(/public/fonts/ACaslonPro-Regular.otf) format('otf');
+}
+
+@font-face {
+  font-family: 'Springville';
+  src: url(/public/fonts/Springville-Regular3.otf) format('otf');
+}
