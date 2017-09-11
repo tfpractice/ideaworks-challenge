@@ -12,7 +12,11 @@ import { Link } from 'react-router-dom';
 
 const styles = theme => ({
   item: { listStyle: 'none' },
-  bar: { bottom: '50%' },
+  bar: {
+    bottom: '50%',
+    backgroundColor: 'transparent',
+  },
+  white: { color: '#fff' },
   card: {
     height: '100%',
     maxHeight: '100%',
@@ -20,10 +24,9 @@ const styles = theme => ({
     backgroundColor: 'transparent',
   },
   media: {
-    backgroundColor: '#fff',
+    backgroundColor: 'transparent',
     height: '25rem',
     maxWidth: '1440px',
-
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
@@ -36,18 +39,32 @@ const Jumbo = ({ classes, event }) => (
     <Grid item xs>
       <Card className={classes.card}>
         <GridListTile className={classes.item}>
-          <Link to={`/`}>
+          <Link to="/">
             <CardMedia
               className={classes.media}
               image={event.img}
               alt={event.title}
             />
           </Link>
-
           <GridListTileBar
             className={classes.bar}
-            subtitle={<CardHeader title={event.text} subheader={event.date} />}
-            title={<CardHeader title={event.title} />}
+            title={
+              <CardHeader
+                title={
+                  <CardContent className={classes.white}>
+                    <Text color="inherit" type="display3">
+                      {event.title}
+                    </Text>
+                    <Text color="inherit" type="title">
+                      {event.date}
+                    </Text>
+                    <Text color="inherit" type="headline">
+                      {event.text}
+                    </Text>
+                  </CardContent>
+                }
+              />
+            }
           />
         </GridListTile>
       </Card>

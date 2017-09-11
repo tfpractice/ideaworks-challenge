@@ -8,23 +8,30 @@ import MenuIcon from 'material-ui-icons/Menu';
 import Grid from 'material-ui/Grid';
 import { Link } from 'react-router-dom';
 
-// import Menu from './menu';
-
+const aStyle = { backgroundColor: '#fff' };
 const Nav = props => (
-  <AppBar>
+  <AppBar elevation={0} style={aStyle}>
     <Toolbar>
       <Grid container justify="space-between" align="center">
-        <Grid item>
+        <Grid item xs>
           <Link to="/">
             <img src="/images/logo.svg" />
           </Link>
         </Grid>
-        <Grid item />
-        <Grid item>
-          212.555.5555
-          <IconButton color="contrast" aria-label="Menu">
-            <MenuIcon />
-          </IconButton>
+        <Grid item xs>
+          <Grid container justify="center" align="center">
+            <Grid item>
+              <Text> 212.555.5555</Text>
+            </Grid>
+            <Grid item>
+              <Button> Login</Button>
+            </Grid>
+            <Grid item>
+              <IconButton aria-label="Menu">
+                <MenuIcon />
+              </IconButton>
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
     </Toolbar>

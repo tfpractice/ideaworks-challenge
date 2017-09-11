@@ -2,10 +2,14 @@ import React from 'react';
 import Grid from 'material-ui/Grid';
 import SwipeableViews from 'react-swipeable-views';
 import withWidth from 'material-ui/utils/withWidth';
+import Lens from 'material-ui-icons/Lens';
 import { compose, withHandlers, withState } from 'recompose';
 import { autoPlay } from 'react-swipeable-views-utils';
+import * as views from 'react-swipeable-views';
 
 import Tabs, { Tab } from 'material-ui/Tabs';
+
+console.log('views', autoPlay);
 
 const AutoViews = autoPlay(SwipeableViews);
 const wStyle = {
@@ -29,29 +33,43 @@ const wIndex = compose(
     increment: ({ index, setIndex, children }) => () =>
       setIndex((index + 1) % children.length),
     changeSet: ({ setIndex }) => (e, i) => setIndex(i),
+    autoSet: ({ setIndex }) => i => setIndex(i),
     idxSet: ({ setIndex }) => i => () => setIndex(i),
   })
 );
 
-const Header = ({ children, changeSet, idxSet, index, iHue = '#000' }) => (
+const Header = ({
+  children,
+  autoSet,
+  changeSet,
+  idxSet,
+  index,
+  iHue = '#000',
+}) => (
   <Grid container justify="center" align="center">
     <Grid item xs={12} style={wStyle}>
-      <SwipeableViews
+      <AutoViews
+        autoplay
         style={wStyle}
         ignoreNativeScroll
         containerStyle={cStyle}
         slideStyle={sStyle}
-        interval={500}
-        index={index}
+        interval={1000}
         enableMouseEvents
-        onChangeIndex={idxSet}
+        onChangeIndex={autoSet}
       >
         {children}
-      </SwipeableViews>
+      </AutoViews>
     </Grid>
     <Grid item xs={11}>
-      <Tabs centered value={index} indicatorColor={iHue} onChange={changeSet}>
-        {children.map((c, i) => <Tab key={i} label={'.'} />)}
+      <Tabs
+        centered
+        value={index}
+        textColor="primary"
+        indicatorColor={iHue}
+        onChange={changeSet}
+      >
+        {children.map((c, i) => <Tab key={i} icon={<Lens />} />)}
       </Tabs>
     </Grid>
   </Grid>
