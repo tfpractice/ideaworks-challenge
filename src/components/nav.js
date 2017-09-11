@@ -7,6 +7,8 @@ import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
 import Grid from 'material-ui/Grid';
 import { Link } from 'react-router-dom';
+import Hidden from 'material-ui/Hidden';
+import NavMenu from './menu';
 
 const aStyle = { backgroundColor: '#fff' };
 const Nav = props => (
@@ -20,16 +22,14 @@ const Nav = props => (
         </Grid>
         <Grid item xs>
           <Grid container justify="center" align="center">
-            <Grid item>
+            <Grid item hidden={{ xsDown: true }}>
               <Text> 212.555.5555</Text>
             </Grid>
-            <Grid item>
+            <Grid item hidden={{ xsDown: true }}>
               <Button> Login</Button>
             </Grid>
             <Grid item>
-              <IconButton aria-label="Menu">
-                <MenuIcon />
-              </IconButton>
+              <NavMenu />
             </Grid>
           </Grid>
         </Grid>

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Button from 'material-ui/Button';
+import IconButton from 'material-ui/IconButton';
+import Text from 'material-ui/Typography';
+import MenuIcon from 'material-ui-icons/Menu';
 import Menu, { MenuItem } from 'material-ui/Menu';
 import { compose, withHandlers, withState } from 'recompose';
 import { Link } from 'react-router-dom';
@@ -18,15 +21,15 @@ const withBoth = compose(
     },
   })
 );
-const Services = ({ open, anchorEl, toggle, onClick }) => (
+const NavMenu = ({ open, anchorEl, toggle, onClick }) => (
   <div>
-    <Button
+    <IconButton
       aria-owns={open ? 'simple-menu' : null}
       aria-haspopup="true"
       onClick={onClick}
     >
-      Services
-    </Button>
+      <MenuIcon />
+    </IconButton>
     <Menu
       id="simple-menu"
       anchorEl={anchorEl}
@@ -34,13 +37,17 @@ const Services = ({ open, anchorEl, toggle, onClick }) => (
       onRequestClose={toggle}
     >
       <MenuItem onClick={toggle}>
-        <Link to="/diversity">Multiculturalism</Link>
+        <Link to="/">
+          <Text> 212.555.5555</Text>
+        </Link>
       </MenuItem>
       <MenuItem onClick={toggle}>
-        <Link to="/spirituality">Sprituality</Link>
+        <Link to="/">
+          <Button> Login</Button>
+        </Link>
       </MenuItem>
     </Menu>
   </div>
 );
 
-export default withBoth(Services);
+export default withBoth(NavMenu);

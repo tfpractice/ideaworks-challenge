@@ -25,17 +25,11 @@ const styles = (theme) => {
       backgroundColor: 'transparent',
     },
     media: {
-      paddingTop: ' calc(3 / 4 * 50%)',
-
-      // backgroundColor: 'transparent',
-      backgroundSize: 'cover',
+      paddingTop: 'calc(3 / 4 * 50%)',
+      backgroundSize: 'contain',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',
-      backgroundColor: 'rgba(0,0,0,0.5)',
       filter: 'brightness(0.5)',
-
-      // height: '25rem',
-      // maxWidth: '1440px',
     },
   };
 };
@@ -59,10 +53,10 @@ const Jumbo = ({ classes, event }) => (
               <CardHeader
                 title={
                   <CardContent className={classes.white}>
-                    <Text color="inherit" type="display3">
+                    <Text color="inherit" type="display1">
                       {event.type}:
                     </Text>
-                    <Text color="inherit" type="display3">
+                    <Text color="inherit" type="display1">
                       {event.title}
                     </Text>
                     <Text className={classes.sub} type="title">
