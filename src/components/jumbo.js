@@ -18,18 +18,18 @@ const styles = theme => ({
   },
   white: { color: '#fff' },
   card: {
-    height: '100%',
-    maxHeight: '100%',
     maxWidth: '1440px',
     backgroundColor: 'transparent',
   },
   media: {
+    paddingTop: ' calc(3 / 4 * 50%)',
     backgroundColor: 'transparent',
-    height: '25rem',
-    maxWidth: '1440px',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
+
+    // height: '25rem',
+    // maxWidth: '1440px',
   },
 });
 const Styled = withStyles(styles);
@@ -52,6 +52,9 @@ const Jumbo = ({ classes, event }) => (
               <CardHeader
                 title={
                   <CardContent className={classes.white}>
+                    <Text color="inherit" type="display3">
+                      {event.type}:
+                    </Text>
                     <Text color="inherit" type="display3">
                       {event.title}
                     </Text>
