@@ -10,28 +10,35 @@ import { connect } from 'react-redux';
 import { withStyles } from 'material-ui/styles';
 import { Link } from 'react-router-dom';
 
-const styles = theme => ({
-  item: { listStyle: 'none' },
-  bar: {
-    bottom: '50%',
-    backgroundColor: 'transparent',
-  },
-  white: { color: '#fff' },
-  card: {
-    maxWidth: '1440px',
-    backgroundColor: 'transparent',
-  },
-  media: {
-    paddingTop: ' calc(3 / 4 * 50%)',
-    backgroundColor: 'transparent',
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
+const styles = (theme) => {
+  console.log('theme', theme);
+  return {
+    item: { listStyle: 'none' },
+    bar: {
+      bottom: '50%',
+      backgroundColor: 'transparent',
+    },
+    sub: { color: theme.palette.secondary[400] },
+    white: { color: '#fff' },
+    card: {
+      maxWidth: '1440px',
+      backgroundColor: 'transparent',
+    },
+    media: {
+      paddingTop: ' calc(3 / 4 * 50%)',
 
-    // height: '25rem',
-    // maxWidth: '1440px',
-  },
-});
+      // backgroundColor: 'transparent',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+      backgroundColor: 'rgba(0,0,0,0.5)',
+      filter: 'brightness(0.5)',
+
+      // height: '25rem',
+      // maxWidth: '1440px',
+    },
+  };
+};
 const Styled = withStyles(styles);
 
 const Jumbo = ({ classes, event }) => (
@@ -58,10 +65,10 @@ const Jumbo = ({ classes, event }) => (
                     <Text color="inherit" type="display3">
                       {event.title}
                     </Text>
-                    <Text color="inherit" type="title">
+                    <Text className={classes.sub} type="title">
                       {event.date}
                     </Text>
-                    <Text color="inherit" type="headline">
+                    <Text className={classes.sub} type="headline">
                       {event.text}
                     </Text>
                   </CardContent>
