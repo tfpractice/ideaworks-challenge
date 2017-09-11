@@ -1,4 +1,5 @@
 const runway0 = {
+  id: 0,
   img: '/images/hero0.png',
   type: 'Screening',
   title: 'DVF Secret Agent Part 2',
@@ -7,6 +8,7 @@ const runway0 = {
   author: 'LOREM IPSUM',
 };
 const runway1 = {
+  id: 1,
   img: '/images/hero1.png',
   type: 'Screening',
   title: 'DVF Secret Agent Part 2',
@@ -15,6 +17,7 @@ const runway1 = {
   author: 'LOREM IPSUM',
 };
 const runway2 = {
+  id: 2,
   img: '/images/hero2.png',
   type: 'Screening',
   title: 'DVF Secret Agent Part 2',

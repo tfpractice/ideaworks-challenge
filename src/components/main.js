@@ -13,8 +13,6 @@ import Nav from './nav';
 import { links } from './links';
 import { slides } from './slides';
 
-const mStyle = { marginTop: '50px' };
-
 const styles = theme => ({
   main: { marginTop: '50px' },
   item: { padding: '10px' },
@@ -22,13 +20,13 @@ const styles = theme => ({
 
 const Styled = withStyles(styles);
 const Main = ({ classes }) => (
-  <Grid container justify="center" spacing={24}>
+  <Grid container justify="center" align="center">
     <Grid item xs={12}>
       <Nav />
     </Grid>
     <Grid item xs={12} className={classes.main}>
-      <Grid container justify="center" spacing={24}>
-        <Grid item xs={12}>
+      <Grid container align="center" justify="center">
+        <Grid item xs>
           <Header>{slides.map((s, i) => <Jumbo event={s} key={i} />)}</Header>
         </Grid>
         <Grid item xs={11}>

@@ -10,11 +10,11 @@ import { Link } from 'react-router-dom';
 import Hidden from 'material-ui/Hidden';
 import NavMenu from './menu';
 
-const aStyle = { backgroundColor: '#fff' };
+const aStyle = { backgroundColor: '#fff', height: '50px' };
 const Nav = props => (
   <AppBar elevation={0} style={aStyle}>
     <Toolbar>
-      <Grid container justify="space-between" align="center">
+      <Grid container justify="space-between" align="center" spacing={0}>
         <Grid item xs>
           <Link to="/">
             <img src="/images/logo.svg" />

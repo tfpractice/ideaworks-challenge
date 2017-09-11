@@ -13,7 +13,7 @@ console.log('views', autoPlay);
 
 const AutoViews = autoPlay(SwipeableViews);
 const wStyle = {
-  maxWidth: '1440px',
+  // maxWidth: '1440px',
   overflow: 'none',
 };
 const cStyle = {
@@ -22,8 +22,8 @@ const cStyle = {
 };
 const sStyle = {
   overflow: 'none',
-  maxWidth: '1440px',
 
+  maxWidth: '1440px',
   WebkitOverflowScrolling: 'touch',
 };
 
@@ -47,13 +47,15 @@ const Header = ({
   iHue = '#000',
 }) => (
   <Grid container justify="center" align="center">
-    <Grid item xs={12} style={wStyle}>
+    <Grid item xs={12}>
       <AutoViews
-        autoplay
-        style={wStyle}
+        autoplay={false}
+
+        // style={wStyle}
         ignoreNativeScroll
-        containerStyle={cStyle}
-        slideStyle={sStyle}
+
+        // containerStyle={cStyle}
+        // slideStyle={sStyle}
         interval={1000}
         enableMouseEvents
         onChangeIndex={autoSet}
@@ -69,7 +71,9 @@ const Header = ({
         indicatorColor={iHue}
         onChange={changeSet}
       >
-        {children.map((c, i) => <Tab key={i} icon={<Lens />} />)}
+        {children.map((c, i) => (
+          <Tab onClick={idxSet(i)} key={c.id} icon={<Lens />} />
+        ))}
       </Tabs>
     </Grid>
   </Grid>

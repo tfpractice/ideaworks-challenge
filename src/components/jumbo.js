@@ -15,7 +15,7 @@ const styles = (theme) => {
   return {
     item: { listStyle: 'none' },
     bar: {
-      bottom: '50%',
+      bottom: '40%',
       backgroundColor: 'transparent',
     },
     sub: { color: theme.palette.secondary[400] },
@@ -25,8 +25,10 @@ const styles = (theme) => {
       backgroundColor: 'transparent',
     },
     media: {
+      // maxWidth: '1440px',
+
       paddingTop: 'calc(3 / 4 * 50%)',
-      backgroundSize: 'contain',
+      backgroundSize: '100% auto',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',
       filter: 'brightness(0.5)',
@@ -36,41 +38,45 @@ const styles = (theme) => {
 const Styled = withStyles(styles);
 
 const Jumbo = ({ classes, event }) => (
-  <Grid container justify="center" align="center">
+  <Grid container justify="center" align="center" spacing={0}>
     <Grid item xs>
       <Card className={classes.card}>
-        <GridListTile className={classes.item}>
-          <Link to="/">
-            <CardMedia
-              className={classes.media}
-              image={event.img}
-              alt={event.title}
-            />
-          </Link>
-          <GridListTileBar
-            className={classes.bar}
-            title={
-              <CardHeader
+        <Grid container justify="center" align="center" spacing={0}>
+          <Grid item xs={12}>
+            <GridListTile component={Card} className={classes.item}>
+              <Link to="/">
+                <CardMedia
+                  className={classes.media}
+                  image={event.img}
+                  alt={event.title}
+                />
+              </Link>
+              <GridListTileBar
+                className={classes.bar}
                 title={
                   <CardContent className={classes.white}>
-                    <Text color="inherit" type="display1">
-                      {event.type}:
-                    </Text>
-                    <Text color="inherit" type="display1">
-                      {event.title}
-                    </Text>
-                    <Text className={classes.sub} type="title">
-                      {event.date}
-                    </Text>
-                    <Text className={classes.sub} type="headline">
-                      {event.text}
-                    </Text>
+                    <Grid container justify="center">
+                      <Grid item xs={11}>
+                        <Text color="inherit" type="headline">
+                          {event.type}:
+                        </Text>
+                        <Text color="inherit" type="headline">
+                          {event.title}
+                        </Text>
+                        <Text className={classes.sub} type="subheading">
+                          {event.date}
+                        </Text>
+                        <Text className={classes.sub} type="subheading">
+                          {event.text}
+                        </Text>
+                      </Grid>
+                    </Grid>
                   </CardContent>
                 }
               />
-            }
-          />
-        </GridListTile>
+            </GridListTile>
+          </Grid>
+        </Grid>
       </Card>
     </Grid>
   </Grid>
