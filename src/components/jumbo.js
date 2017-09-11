@@ -63,10 +63,10 @@ const Jumbo = ({ classes, event }) => (
                         <Text color="inherit" type="headline">
                           {event.title}
                         </Text>
-                        <Text className={classes.sub} type="subheading">
+                        <Text className={classes.sub} type="body1">
                           {event.date}
                         </Text>
-                        <Text className={classes.sub} type="subheading">
+                        <Text className={classes.sub} type="body1">
                           {event.text}
                         </Text>
                       </Grid>

@@ -10,23 +10,26 @@ import { Link } from 'react-router-dom';
 import Hidden from 'material-ui/Hidden';
 import NavMenu from './menu';
 
+const tStyle = { fontFamily: 'Roboto', color: '#a7a7a7' };
 const aStyle = { backgroundColor: '#fff', height: '50px' };
 const Nav = props => (
   <AppBar elevation={0} style={aStyle}>
     <Toolbar>
-      <Grid container justify="space-between" align="center" spacing={0}>
+      <Grid container justify="space-between" align="center">
         <Grid item xs>
           <Link to="/">
             <img src="/images/logo.svg" />
           </Link>
         </Grid>
         <Grid item xs>
-          <Grid container justify="center" align="center">
+          <Grid container justify="flex-end" align="center" spacing={0}>
             <Grid item hidden={{ xsDown: true }}>
-              <Text> 212.555.5555</Text>
+              <Text type="button" style={tStyle}>
+                212.555.5555
+              </Text>
             </Grid>
             <Grid item hidden={{ xsDown: true }}>
-              <Button> Login</Button>
+              <Button style={tStyle}> Login</Button>
             </Grid>
             <Grid item>
               <NavMenu />

@@ -19,10 +19,7 @@ const styles = theme => ({
   item: { listStyle: 'none' },
   content: { fontFamily: 'Roboto', color: '#a7a7a7' },
   grey: { color: '#a7a7a7' },
-  card: {
-    padding: '10px',
-    backgroundColor: 'transparent',
-  },
+  card: { backgroundColor: 'transparent' },
   media: {
     height: '20rem',
     backgroundSize: 'cover',

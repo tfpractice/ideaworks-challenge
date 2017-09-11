@@ -7,6 +7,8 @@ import Menu, { MenuItem } from 'material-ui/Menu';
 import { compose, withHandlers, withState } from 'recompose';
 import { Link } from 'react-router-dom';
 
+const tStyle = { fontFamily: 'Roboto', color: '#a7a7a7' };
+
 const wSwitch = withState('open', 'flip', false);
 const wAnchor = withState('anchorEl', 'setEl', undefined);
 const withBoth = compose(
@@ -38,12 +40,12 @@ const NavMenu = ({ open, anchorEl, toggle, onClick }) => (
     >
       <MenuItem onClick={toggle}>
         <Link to="/">
-          <Text> 212.555.5555</Text>
+          <Text style={tStyle}> 212.555.5555</Text>
         </Link>
       </MenuItem>
       <MenuItem onClick={toggle}>
         <Link to="/">
-          <Button> Login</Button>
+          <Button style={tStyle}> Login</Button>
         </Link>
       </MenuItem>
     </Menu>
