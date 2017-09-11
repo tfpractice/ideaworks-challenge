@@ -4,7 +4,8 @@ const runway0 = {
   type: 'Screening',
   title: 'DVF Secret Agent Part 2',
   date: 'FEBRUARY 10 2017',
-  text: 'Join us for a private screening of DVF Secret Agent Part 2 with',
+  text:
+    'Join us for a private screening of DVF Secret Agent Part 2 with our special guest, director Peter Lindberg.',
   author: 'LOREM IPSUM',
 };
 const runway1 = {
@@ -13,7 +14,8 @@ const runway1 = {
   type: 'Screening',
   title: 'DVF Secret Agent Part 2',
   date: 'FEBRUARY 10 2017',
-  text: 'Join us for a private screening of DVF Secret Agent Part 2 with',
+  text:
+    'Join us for a private screening of DVF Secret Agent Part 2 with our special guest, director Peter Lindberg.',
   author: 'LOREM IPSUM',
 };
 const runway2 = {
@@ -22,7 +24,8 @@ const runway2 = {
   type: 'Screening',
   title: 'DVF Secret Agent Part 2',
   date: 'FEBRUARY 10 2017',
-  text: 'Join us for a private screening of DVF Secret Agent Part 2 with',
+  text:
+    'Join us for a private screening of DVF Secret Agent Part 2 with our special guest, director Peter Lindberg.',
   author: 'LOREM IPSUM',
 };
 

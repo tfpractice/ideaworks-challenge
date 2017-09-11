@@ -17,7 +17,8 @@ import { Link } from 'react-router-dom';
 
 const styles = theme => ({
   item: { listStyle: 'none' },
-  content: { fontFamily: 'Roboto' },
+  content: { fontFamily: 'Roboto', color: '#a7a7a7' },
+  grey: { color: '#a7a7a7' },
   card: {
     padding: '10px',
     backgroundColor: 'transparent',
@@ -39,17 +40,17 @@ const EventCard = ({ event, classes }) => {
       <CardMedia className={classes.media} image={event.img} alt={event.id} />
       <CardContent>
         <Text className={classes.content}>{event.date}</Text>
-      </CardContent>{' '}
+      </CardContent>
       <CardHeader
         title={
           <Link to="/">
-            <Text type="display2">{event.text}</Text>
+            <Text type="display1">{event.text}</Text>
           </Link>
         }
         subheader={event.title}
       />
       <CardContent>
-        <Text type="title">
+        <Text className={classes.grey} type="title">
           Presented by <Link to="/">{event.author}</Link>
         </Text>
       </CardContent>
