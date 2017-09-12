@@ -34,7 +34,7 @@ const Main = ({ classes }) => (
         <Grid item xs={11}>
           <Grid container justify="center" spacing={40}>
             {links.map(e => (
-              <Grid item xs={11} sm={6} md={4} key={e.id}>
+              <Grid item xs={6} sm={6} md={4} key={e.id}>
                 <EventCard event={e} className={classes.item} />
                 <Divider />
               </Grid>
