@@ -1,62 +1,29 @@
 import React from 'react';
 import Grid from 'material-ui/Grid';
 import SwipeableViews from 'react-swipeable-views';
-import withWidth from 'material-ui/utils/withWidth';
 import Lens from 'material-ui-icons/Lens';
-import { compose, withHandlers, withState } from 'recompose';
-import { autoPlay } from 'react-swipeable-views-utils';
-import * as views from 'react-swipeable-views';
-
 import Tabs, { Tab } from 'material-ui/Tabs';
-
-console.log('views', autoPlay);
+import { autoPlay } from 'react-swipeable-views-utils';
+import { compose, withHandlers, withState } from 'recompose';
 
 const AutoViews = autoPlay(SwipeableViews);
-const wStyle = {
-  // maxWidth: '1440px',
-  overflow: 'none',
-};
-const cStyle = {
-  maxWidth: '1440px',
-  overflow: 'none',
-};
-const sStyle = {
-  overflow: 'none',
-
-  maxWidth: '1440px',
-  WebkitOverflowScrolling: 'touch',
-};
 
 const wIndex = compose(
   withState('index', 'setIndex', ({ index = 0 }) => index),
   withHandlers({
-    increment: ({ index, setIndex, children }) => () =>
-      setIndex((index + 1) % children.length),
     changeSet: ({ setIndex }) => (e, i) => setIndex(i),
     autoSet: ({ setIndex }) => i => setIndex(i),
     idxSet: ({ setIndex }) => i => () => setIndex(i),
   })
 );
 
-const Header = ({
-  children,
-  autoSet,
-  changeSet,
-  idxSet,
-  index,
-  iHue = '#000',
-}) => (
+const Header = ({ children, autoSet, changeSet, idxSet, index }) => (
   <Grid container justify="center" align="center">
     <Grid item xs={12}>
       <AutoViews
-        autoplay={false}
-
-        // style={wStyle}
+        autoplay
         ignoreNativeScroll
-
-        // containerStyle={cStyle}
-        // slideStyle={sStyle}
-        interval={1000}
+        interval={5000}
         enableMouseEvents
         onChangeIndex={autoSet}
       >
@@ -68,7 +35,7 @@ const Header = ({
         centered
         value={index}
         textColor="primary"
-        indicatorColor={iHue}
+        indicatorColor="primary"
         onChange={changeSet}
       >
         {children.map((c, i) => (
