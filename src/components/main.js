@@ -25,7 +25,7 @@ const Main = ({ classes }) => (
       <Nav />
     </Grid>
     <Grid item xs={12} className={classes.main}>
-      <Grid container align="center" justify="center">
+      <Grid container justify="center">
         <Grid item xs>
           <Header>{slides.map((s, i) => <Jumbo event={s} key={i} />)}</Header>
         </Grid>

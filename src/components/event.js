@@ -21,10 +21,12 @@ const styles = theme => ({
   grey: { color: '#a7a7a7' },
   card: { backgroundColor: 'transparent' },
   media: {
-    height: '20rem',
-    backgroundSize: 'cover',
+    // height: '20rem',
+    paddingTop: 'calc(4 / 4 * 100%)',
+
+    backgroundSize: 'contain',
     backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
+    backgroundPosition: 'top',
   },
 });
 const Styled = withStyles(styles);
