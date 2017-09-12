@@ -16,7 +16,7 @@ const wIndex = compose(
     idxSet: ({ setIndex }) => i => () => setIndex(i),
   })
 );
-
+const bStyle = { maxHeight: '2rem' };
 const Header = ({ children, autoSet, changeSet, idxSet, index }) => (
   <Grid container justify="center" align="center">
     <Grid item xs={12}>
@@ -39,7 +39,7 @@ const Header = ({ children, autoSet, changeSet, idxSet, index }) => (
         onChange={changeSet}
       >
         {children.map((c, i) => (
-          <Tab onClick={idxSet(i)} key={i} icon={<Lens />} />
+          <Tab style={bStyle} onClick={idxSet(i)} key={i} icon={<Lens />} />
         ))}
       </Tabs>
     </Grid>
