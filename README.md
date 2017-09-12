@@ -29,9 +29,10 @@ Below, you will find a link to the files necessary to complete this test. Includ
   * (__to clarify, 2 columns for mobile? or should there be a single column__).
 - At this point, please have the padding between the items be the same as the padding between the grid and the edge of the screen 
   * (__padding between the columns or padding between the individual events?__).
-  * __Depending on how the images consume the space the apparent padding will be different for thinner and taller images than squat ones, this affects both the apparent vertical and horizontal spacing
+  * __Depending on how the images consume the space the apparent padding will be different for thinner and taller images than squat ones, this affects both the apparent vertical and horizontal spacing__
  
 When complete, please send us your source code and a live link to view your work.
+- __am I expected to pay for a service to transpile and load my code?__
  
 Source: http://dev.ideaworkdev.com/code-test/sample.zip
  
