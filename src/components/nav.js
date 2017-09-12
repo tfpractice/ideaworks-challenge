@@ -11,14 +11,14 @@ import Hidden from 'material-ui/Hidden';
 import NavMenu from './menu';
 
 const tStyle = { fontFamily: 'Roboto', color: '#a7a7a7' };
-const aStyle = { backgroundColor: '#fff', height: '50px' };
+const aStyle = { backgroundColor: '#fff', minHeight: '50px' };
 const Nav = props => (
   <AppBar elevation={0} style={aStyle}>
     <Toolbar>
-      <Grid container justify="space-between" align="center">
+      <Grid container align="center">
         <Grid item xs>
           <Link to="/">
-            <img src="/images/logo.svg" />
+            <img src="/images/logo.svg" alt="logo" />
           </Link>
         </Grid>
         <Grid item xs>

@@ -15,18 +15,19 @@ const styles = (theme) => {
   return {
     item: { listStyle: 'none' },
     bar: {
-      bottom: '40%',
+      bottom: '30%',
       backgroundColor: 'transparent',
     },
-    sub: { color: theme.palette.secondary[400] },
+    sub: {
+      color: theme.palette.secondary[400],
+      fontSize: '90%',
+    },
     white: { color: '#fff' },
     card: {
       maxWidth: '1440px',
       backgroundColor: 'transparent',
     },
     media: {
-      // maxWidth: '1440px',
-
       paddingTop: 'calc(3 / 4 * 50%)',
       backgroundSize: '100% auto',
       backgroundRepeat: 'no-repeat',
@@ -38,48 +39,49 @@ const styles = (theme) => {
 const Styled = withStyles(styles);
 
 const Jumbo = ({ classes, event }) => (
-  <Grid container justify="center" align="center" spacing={0}>
-    <Grid item xs>
-      <Card className={classes.card}>
-        <Grid container justify="center" align="center" spacing={0}>
-          <Grid item xs={12}>
-            <GridListTile component={Card} className={classes.item}>
-              <Link to="/">
-                <CardMedia
-                  className={classes.media}
-                  image={event.img}
-                  alt={event.title}
-                />
-              </Link>
-              <GridListTileBar
-                className={classes.bar}
-                title={
-                  <CardContent className={classes.white}>
-                    <Grid container justify="center">
-                      <Grid item xs={11}>
-                        <Text color="inherit" type="headline">
-                          {event.type}:
-                        </Text>
-                        <Text color="inherit" type="headline">
-                          {event.title}
-                        </Text>
-                        <Text className={classes.sub} type="body1">
-                          {event.date}
-                        </Text>
-                        <Text className={classes.sub} type="body1">
-                          {event.text}
-                        </Text>
-                      </Grid>
-                    </Grid>
-                  </CardContent>
-                }
-              />
-            </GridListTile>
-          </Grid>
-        </Grid>
-      </Card>
+
+  // <Grid container justify="center" align="center" spacing={0}>
+  // {/* <Grid item xs> */}
+  <Card className={classes.card}>
+    <Grid container justify="center" align="center" spacing={0}>
+      <Grid item xs>
+        <GridListTile component={Card} className={classes.item}>
+          <Link to="/">
+            <CardMedia
+              className={classes.media}
+              image={event.img}
+              alt={event.title}
+            />
+          </Link>
+          <GridListTileBar
+            className={classes.bar}
+            title={
+              <CardContent className={classes.white}>
+                <Grid container>
+                  <Grid item xs={9}>
+                    <Text color="inherit" type="headline">
+                      {event.type}:
+                    </Text>
+                    <Text color="inherit" type="headline">
+                      {event.title}
+                    </Text>
+                    <Text color="inherit">{event.date}</Text>
+                    <Text className={classes.sub}>
+                      {event.text.slice(0, 59)}
+                    </Text>
+                    <Text className={classes.sub}>{event.text.slice(59)}</Text>
+                  </Grid>
+                </Grid>
+              </CardContent>
+            }
+          />
+        </GridListTile>
+      </Grid>
     </Grid>
-  </Grid>
+  </Card>
+
+  // </Grid>
+  // </Grid>/
 );
 
 export default Styled(Jumbo);

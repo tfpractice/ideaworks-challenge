@@ -1,29 +1,17 @@
 import React from 'react';
 import Text from 'material-ui/Typography';
-import Grid from 'material-ui/Grid';
-import Chip from 'material-ui/Chip';
-import Avatar from 'material-ui/Avatar';
-
-import { GridListTile, GridListTileBar } from 'material-ui/GridList';
-import Card, {
-  CardActions,
-  CardContent,
-  CardHeader,
-  CardMedia,
-} from 'material-ui/Card';
-
-import { withStyles } from 'material-ui/styles';
+import Card, { CardContent, CardHeader, CardMedia } from 'material-ui/Card';
 import { Link } from 'react-router-dom';
+import { withStyles } from 'material-ui/styles';
 
 const styles = theme => ({
-  item: { listStyle: 'none' },
   content: { fontFamily: 'Roboto', color: '#a7a7a7' },
   grey: { color: '#a7a7a7' },
+  title: { color: '#000' },
   card: { backgroundColor: 'transparent' },
+  header: { paddingTop: 0, paddingBottom: 0, color: '#000' },
   media: {
-    // height: '20rem',
     paddingTop: 'calc(4 / 4 * 100%)',
-
     backgroundSize: 'contain',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'top',
@@ -31,30 +19,28 @@ const styles = theme => ({
 });
 const Styled = withStyles(styles);
 
-const EventCard = ({ event, classes }) => {
-  const a = 0;
-
-  return (
-    <Card elevation={0} className={classes.card}>
-      <CardMedia className={classes.media} image={event.img} alt={event.id} />
-      <CardContent>
-        <Text className={classes.content}>{event.date}</Text>
-      </CardContent>
-      <CardHeader
-        title={
-          <Link to="/">
-            <Text type="display1">{event.text}</Text>
-          </Link>
-        }
-        subheader={event.title}
-      />
-      <CardContent>
-        <Text className={classes.grey} type="title">
-          Presented by <Link to="/">{event.author}</Link>
-        </Text>
-      </CardContent>
-    </Card>
-  );
-};
+const EventCard = ({ event, classes }) => (
+  <Card elevation={0} className={classes.card}>
+    <CardMedia className={classes.media} image={event.img} alt={event.id} />
+    <CardContent>
+      <Text className={classes.content}>{event.date}</Text>
+    </CardContent>
+    <CardHeader
+      className={classes.header}
+      title={
+        <Link to="/">
+          <Text className={classes.title} color="default" type="display1">
+            {event.text}
+          </Text>
+        </Link>
+      }
+    />
+    <CardContent>
+      <Text className={classes.grey} type="title">
+        Presented by <Link to="/">{event.author}</Link>
+      </Text>
+    </CardContent>
+  </Card>
+);
 
 export default Styled(EventCard);

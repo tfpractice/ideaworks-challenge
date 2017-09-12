@@ -1,12 +1,24 @@
 import grey from 'material-ui/colors/grey';
-import { black, white } from 'material-ui/colors/common';
+
+// import { black, white } from 'material-ui/colors/common';
+import common from 'material-ui/colors/common';
+import * as colors from 'material-ui/colors';
 import { createMuiTheme } from 'material-ui/styles';
 
-const primary = black;
+console.log('common', common);
+const { black, white } = common;
+const primary = grey;
 const accent = white;
 const secondary = grey;
 const type = 'light';
-const palette = { primary, accent, secondary, type };
+const palette = {
+  primary,
+  accent,
+  secondary,
+  type,
+  black,
+  white,
+};
 const caslon = 'Caslon';
 const Roboto = 'Roboto';
 const Springville = 'Springville';

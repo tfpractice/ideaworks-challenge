@@ -72,7 +72,7 @@ const Header = ({
         onChange={changeSet}
       >
         {children.map((c, i) => (
-          <Tab onClick={idxSet(i)} key={c.id} icon={<Lens />} />
+          <Tab onClick={idxSet(i)} key={i} icon={<Lens />} />
         ))}
       </Tabs>
     </Grid>
