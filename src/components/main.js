@@ -3,6 +3,7 @@ import Grid from 'material-ui/Grid';
 import Divider from 'material-ui/Divider';
 import { withStyles } from 'material-ui/styles';
 
+import Footer from './footer';
 import EventCard from './event';
 import Header from './header';
 import Jumbo from './jumbo';
@@ -32,6 +33,9 @@ const Main = ({ classes }) => (
               </Grid>
             ))}
           </Grid>
+        </Grid>
+        <Grid item xs={12}>
+          <Footer />
         </Grid>
       </Grid>
     </Grid>
