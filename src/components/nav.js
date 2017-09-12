@@ -3,16 +3,15 @@ import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Text from 'material-ui/Typography';
 import Button from 'material-ui/Button';
-import IconButton from 'material-ui/IconButton';
-import MenuIcon from 'material-ui-icons/Menu';
 import Grid from 'material-ui/Grid';
 import { Link } from 'react-router-dom';
-import Hidden from 'material-ui/Hidden';
+
 import NavMenu from './menu';
 
 const tStyle = { fontFamily: 'Roboto', color: '#a7a7a7' };
 const aStyle = { backgroundColor: '#fff', minHeight: '50px' };
-const Nav = props => (
+
+const Nav = () => (
   <AppBar elevation={0} style={aStyle}>
     <Toolbar>
       <Grid container align="center">

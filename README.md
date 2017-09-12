@@ -7,6 +7,7 @@ Below, you will find a link to the files necessary to complete this test. Includ
 * On mobile, the height of the header should be 50px 
   * (__what about other sizes?__). 
 * resize and align items as necessary, keeping the logo to the left, and other items to the right.
+  * (__how much padding specifically would you want in the header? the psd has the logo and masonary grid aligned, but with nested breakpoints or columns combined with React, aligning disparate components seems programmatically unnecessary/cumbersome for screens which change sizes)
  
 * The wide image with overlaid text is a carousel. No previous/next arrows are necessary, but please include the navigation dots below
   * (__what size should they be__).
@@ -28,6 +29,7 @@ Below, you will find a link to the files necessary to complete this test. Includ
   * (__to clarify, 2 columns for mobile? or should there be a single column__).
 - At this point, please have the padding between the items be the same as the padding between the grid and the edge of the screen 
   * (__padding between the columns or padding between the individual events?__).
+  * __Depending on how the images consume the space the apparent padding will be different for thinner and taller images than squat ones, this affects both the apparent vertical and horizontal spacing
  
 When complete, please send us your source code and a live link to view your work.
  
