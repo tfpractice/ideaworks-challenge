@@ -39,9 +39,6 @@ const styles = (theme) => {
 const Styled = withStyles(styles);
 
 const Jumbo = ({ classes, event }) => (
-
-  // <Grid container justify="center" align="center" spacing={0}>
-  // {/* <Grid item xs> */}
   <Card className={classes.card}>
     <Grid container justify="center" align="center" spacing={0}>
       <Grid item xs>
@@ -58,7 +55,7 @@ const Jumbo = ({ classes, event }) => (
             title={
               <CardContent className={classes.white}>
                 <Grid container>
-                  <Grid item xs={9}>
+                  <Grid item xs={11}>
                     <Text color="inherit" type="headline">
                       {event.type}:
                     </Text>
@@ -79,9 +76,6 @@ const Jumbo = ({ classes, event }) => (
       </Grid>
     </Grid>
   </Card>
-
-  // </Grid>
-  // </Grid>/
 );
 
 export default Styled(Jumbo);
